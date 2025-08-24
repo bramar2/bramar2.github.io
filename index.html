@@ -1,3 +1,138 @@
 <!DOCTYPE html>
-<head><script>window.location.href = "https://github.com/bramar2";</script></head>
-<body><a>Test site.</a></body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bramar2.github.io</title>
+    <style>
+        @font-face {
+            font-family: orbitron;
+            src: url('assets/Orbitron-Regular.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: quantico;
+            src: url('assets/Quantico-Regular.ttf') format('truetype');
+        }
+        body {
+            height: 200vh;
+            background-image: url("assets/bg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            padding-top: 1vh;
+            padding-left: 1vh;
+        }
+        #top {
+            display: flex;
+            gap: 2vh;
+            align-items: center;
+            background-color: black;
+            border-radius: 15px;
+            padding-left: 2vh;
+
+            transition: background-color 0.2s ease-in;
+        }
+        #top > img {
+            height: max(5vh, 50px);
+        }
+        #top > h1 {
+            font-family: orbitron;
+            color: #eeeeeeee;
+            margin: 2vh 0 2vh 0;
+            user-select: none;
+        }
+
+        #top:hover {
+            background-color: #000088;
+            cursor: pointer;
+        }
+
+        #project-part {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #my-projects {
+            font-family: quantico;
+            color: #8a2be2bb;
+            text-shadow: 3px 3px black;
+            user-select: none;
+        }
+        #project-container {
+            display: flex;
+            gap: 5vw;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        #project {
+            background-color: white;
+            overflow: hidden;
+            border-radius: 15px;
+            width: min(40vw, 400px);
+            height: 20vh;
+
+            background-image:
+                linear-gradient(to bottom, rgba(60,60,60,0) 0%,rgba(60,60,60,0.5) 60%,rgba(60,60,60,1) 100%),
+                var(--data-img);
+
+            background-size: cover;
+            display: flex;
+            flex-direction: column-reverse;
+            
+            cursor: pointer;
+            opacity: 1.0;
+
+            transition: transform 0.2s ease-out;
+
+            box-shadow: 3px 3px #444444aa;
+        }
+        #project > h1 {
+            font-family: quantico;
+            color: #c3b1b177;
+            font-size: min(3vw, 1em);
+            text-shadow: 1px 1px 2px #000000;
+            user-select: none;
+            margin-left: 10px;
+
+            transition: color 0.1s ease-in;
+        }
+
+        #project:hover {
+            background-image:
+                linear-gradient(to bottom, rgba(60,60,80,0) 0%,rgba(60,60,80,0.5) 60%,rgba(60,60,80,1) 100%),
+                var(--data-img);
+            transform: scale(1.05);
+        }
+        #project:hover > h1 {
+            color: #c3b1b199;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://github.com/bramar2/" style="text-decoration: none;">
+        <div id="top">
+            <img draggable="false" src="assets/user.svg">
+            <h1>bramar2</h1>
+        </div>
+    </a>
+    <div id="project-part">
+        <h1 id="my-projects">My projects</h1>
+        <div id="project-container">
+            <div id="project" style="--data-img: url(assets/arcade-game.png);">
+                <h1>Crossplatform Tetris using SDL3 Technology</h1>
+            </div>
+            <div id="project" style="--data-img: url(assets/undetected-selenium.png);">
+                <h1>Undetected selenium implementation in Java</h1>
+            </div>
+            <div id="project" style="--data-img: url(assets/json.png);">
+                <h1>RFC-compliant C++ JSON library</h1>
+            </div>
+            <div id="project" style="--data-img: url(assets/leetcode.png);">
+                <h1>2500+ Leetcode Profile</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
